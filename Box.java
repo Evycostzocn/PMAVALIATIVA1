@@ -1,4 +1,5 @@
 package AA1;
+import java.util.ArrayList;
 
 public class Box {
 	private int numero;
@@ -6,7 +7,7 @@ public class Box {
 	private int capacidadeMaximaCarros;
 	private String localizacao;
 	private Mecanico mecanico;
-	private OS os;
+	private ArrayList<OS> ordens = new ArrayList<>();
 	
 	public int getNumero() {
 		return numero;
@@ -38,13 +39,14 @@ public class Box {
 	public void setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
-	public OS getOs() {
-		return os;
+	public ArrayList<OS> getOrdens() {
+		return ordens;
 	}
-	public void setOs(OS os) {
-		this.os = os;
+
+	public void exibirOS() {
+		for (OS os : ordens) {
+			os.exibirInformacoes();
+		}
+		System.out.println("TOTAL DE ORDENS: " + ordens.size());
 	}
-	
-	
-	
 }
