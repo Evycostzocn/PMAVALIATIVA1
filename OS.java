@@ -1,57 +1,8 @@
-package AA1;
+	}
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
 
-public class OS {
-	private int codigo;
-	private String nomeCliente;
-	private String modeloVeiculo;
-	private String placa;
-	private String data;
-	private String status;
-	private double valor;
-	
-	public int getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-	public String getNomeCliente() {
-		return nomeCliente;
-	}
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
-	}
-	public String getModeloVeiculo() {
-		return modeloVeiculo;
-	}
-	public void setModeloVeiculo(String modeloVeiculo) {
-		this.modeloVeiculo = modeloVeiculo;
-	}
-	public String getPlaca() {
-		return placa;
-	}
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-	public String getData() {
-		return data;
-	}
-	public void setData(String data) {
-		this.data = data;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public double getValor() {
-		return valor;
-	}
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-	
 	public void exibirInformacoes() {
 		System.out.println("CODIGO: " + codigo);
 		System.out.println("NOME: " + nomeCliente);
@@ -59,7 +10,28 @@ public class OS {
 		System.out.println("PLACA: " + placa);
 		System.out.println("DATA: " + data);
 		System.out.println("STATUS: " + status);
-		System.out.println("VALOR: " + valor);
+		System.out.println("VALOR ESTIMADO: " + valor);
+		if (servico != null) {
+			System.out.println("SERVICO: " + servico.getNome());
+			System.out.println("TEMPO: " + servico.getTempo());
+			System.out.println("VALOR DO SERVICO: " + servico.getValor());
+			System.out.println("CATEGORIA: " + servico.getCategoria());
+		}
+		if (box != null) {
+			System.out.println("BOX: " + box.getNumero());
+			System.out.println("TIPO: " + box.getTipoDeServico());
+			System.out.println("CAPACIDADE: " + box.getCapacidadeMaximaCarros());
+			System.out.println("LOCALIZACAO: " + box.getLocalizacao());
+			if (box.getMecanico() != null) {
+				System.out.println("MECANICO: " + box.getMecanico().getNome());
+				System.out.println("CPF: " + box.getMecanico().getCpf());
+				System.out.println("ESPECIALIDADE: " + box.getMecanico().getEspecialidade());
+				System.out.println("TELEFONE: " + box.getMecanico().getTelefone());
+			}
+		} else {
+			System.out.println("BOX: ainda nao atribuido.");
+			System.out.println("MECANICO: ainda nao atribuido.");
+		}
 	}
 	
 }
